@@ -1,0 +1,5 @@
+20230712205515 | INFO | Повідомлення: Write first record in log file
+20230712205516 | DEBUG | INFO | Повідомлення: Write second record
+20230712205516 | DEBUG | INFO | Повідомлення: Write the third record 
+20230712205517 | INFO | Повідомлення: Write the fourth record 
+20230712205525 | INFO | Повідомлення: Write first record in log file
