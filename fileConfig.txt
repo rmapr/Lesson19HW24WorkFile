@@ -1,0 +1,4 @@
+FILE: result.log
+LEVEL: INFO
+MAX-SIZE: 128
+FORMAT: %s | %s | Повідомлення: %s

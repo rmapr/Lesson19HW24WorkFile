@@ -1,14 +1,10 @@
-package hw24FileLogger.entity;
+package hw24FileLoggerV2.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.experimental.Accessors;
 
-@Getter
-@Setter
-@ToString
 @Data
+@Accessors(chain = true)
 public class FileLoggerConfiguration {
     private String fileName;
     private LoggingLevel level;

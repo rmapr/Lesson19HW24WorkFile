@@ -43,7 +43,7 @@
                     <configuration>
                         <archive>
                             <manifest>
-                                <mainClass>hw24FileLogger.App</mainClass>
+                                <mainClass>hw24FileLoggerV2.App</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
