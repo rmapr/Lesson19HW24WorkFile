@@ -1,5 +1,6 @@
 package hw24FileLoggerV2.entity;
 
+import hw24FileLoggerV2.exception.FileConfigParamException;
 import hw24FileLoggerV2.exception.FileMaxSizeReachedException;
 import lombok.Getter;
 import lombok.Setter;
@@ -35,12 +36,19 @@ public class FileLoggerConfigurationLoader {
                 result.add(Arrays.toString(br.readLine().split("\n")));
             }
         }
+        if (result.size() < 4) {
+            throw new FileConfigParamException("\n configFile.txt don't correct or one of the field empty!\n");
+        }
         int i =0;
 
        FileLoggerConfiguration fileLoggerConfiguration = new FileLoggerConfiguration();
         for (String s : result) {
             int indexSeparator = s.indexOf(": ");
-            switch (i) {
+            if (indexSeparator == -1) {
+                throw new FileConfigParamException("\n configFile.txt don't correct or one of the field empty!\n");
+        }
+
+        switch (i) {
                 case 0 -> fileLoggerConfiguration.setFileName(s.substring(indexSeparator + 2, s.indexOf(']')));
                 case 1 -> fileLoggerConfiguration.setLevel(LoggingLevel.valueOf(s.substring(indexSeparator + 2, s.indexOf(']'))));
                 case 2 -> fileLoggerConfiguration.setMaxFileSize(parseInt(s.substring(indexSeparator + 2, s.indexOf(']'))));
